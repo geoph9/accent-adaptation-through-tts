@@ -1,0 +1,246 @@
+{
+    "kor": {
+        "ko-KR": [
+            "ko-KR-BongJinNeural",
+            "ko-KR-GookMinNeural",
+            "ko-KR-InJoonNeural",
+            "ko-KR-JiMinNeural",
+            "ko-KR-SeoHyeonNeural",
+            "ko-KR-SoonBokNeural",
+            "ko-KR-SunHiNeural",
+            "ko-KR-YuJinNeural"
+        ]
+    },
+    "de": {
+        "de-AT": [
+          "de-AT-JonasNeural",
+          "de-AT-IngridNeural"
+        ],
+        "de-DE": [
+          "de-DE-AmalaNeural",
+          "de-DE-BerndNeural",
+          "de-DE-ChristophNeural",
+          "de-DE-ElkeNeural",
+          "de-DE-KasperNeural",
+          "de-DE-KatjaNeural",
+          "de-DE-ConradNeural",
+          "de-DE-ElkeNeural",
+          "de-DE-GiselaNeural",
+          "de-DE-KillianNeural",
+          "de-DE-KlarissaNeural",
+          "de-DE-KlausNeural",
+          "de-DE-LouisaNeural",
+          "de-DE-MajaNeural",
+          "de-DE-RalfNeural",
+          "de-DE-TanjaNeural"
+        ]
+    },
+    "viet": {
+        "vi-VN": [
+            "vi-VN-HoaiMyNeural",
+            "vi-VN-NamMinhNeural"
+        ]
+    },
+    "span": {
+        "es-AR": [
+            "es-AR-ElenaNeural",
+            "es-AR-TomasNeural"
+        ],
+        "es-BO": [
+            "es-BO-MarceloNeural",
+            "es-BO-SofiaNeural"
+        ],
+        "es-CL": [
+            "es-CL-CatalinaNeural",
+            "es-CL-LorenzoNeural"
+        ],
+        "es-CO": [
+            "es-CO-GonzaloNeural",
+            "es-CO-SalomeNeural"
+        ],
+        "es-CR": [
+            "es-CR-JuanNeural",
+            "es-CR-MariaNeural"
+        ],
+        "es-CU": [
+            "es-CU-BelkysNeural",
+            "es-CU-ManuelNeural"
+        ],
+        "es-DO": [
+            "es-DO-EmilioNeural",
+            "es-DO-RamonaNeural"
+        ],
+        "es-EC": [
+            "es-EC-AndreaNeural",
+            "es-EC-LuisNeural"
+        ],
+        "es-ES": [
+            "es-ES-AbrilNeural",
+            "es-ES-AlvaroNeural",
+            "es-ES-ArnauNeural",
+            "es-ES-DarioNeural",
+            "es-ES-EliasNeural",
+            "es-ES-ElviraNeural",
+            "es-ES-EstrellaNeural",
+            "es-ES-IreneNeural",
+            "es-ES-LaiaNeural",
+            "es-ES-LiaNeural",
+            "es-ES-NilNeural",
+            "es-ES-SaulNeural",
+            "es-ES-TeoNeural",
+            "es-ES-TrianaNeural",
+            "es-ES-VeraNeural"
+        ],
+        "es-GQ": [
+            "es-GQ-JavierNeural",
+            "es-GQ-TeresaNeural"
+        ],
+        "es-GT": [
+            "es-GT-AndresNeural",
+            "es-GT-MartaNeural"
+        ],
+        "es-HN": [
+            "es-HN-CarlosNeural",
+            "es-HN-KarlaNeural"
+        ],
+        "es-MX": [
+            "es-MX-BeatrizNeural",
+            "es-MX-CandelaNeural",
+            "es-MX-CarlotaNeural",
+            "es-MX-CecilioNeural",
+            "es-MX-DaliaNeural",
+            "es-MX-GerardoNeural",
+            "es-MX-JorgeNeural",
+            "es-MX-LarissaNeural",
+            "es-MX-LibertoNeural",
+            "es-MX-LucianoNeural",
+            "es-MX-MarinaNeural",
+            "es-MX-NuriaNeural",
+            "es-MX-PelayoNeural",
+            "es-MX-RenataNeural",
+            "es-MX-YagoNeural"
+        ],
+        "es-NI": [
+            "es-NI-FedericoNeural",
+            "es-NI-YolandaNeural"
+        ],
+        "es-PA": [
+            "es-PA-MargaritaNeural",
+            "es-PA-RobertoNeural"
+        ],
+        "es-PE": [
+            "es-PE-AlexNeural",
+            "es-PE-CamilaNeural"
+        ],
+        "es-PR": [
+            "es-PR-KarinaNeural",
+            "es-PR-VictorNeural"
+        ],
+        "es-PY": [
+            "es-PY-MarioNeural",
+            "es-PY-TaniaNeural"
+        ],
+        "es-SV": [
+            "es-SV-LorenaNeural",
+            "es-SV-RodrigoNeural"
+        ],
+        "es-UY": [
+            "es-UY-MateoNeural",
+            "es-UY-ValentinaNeural"
+        ],
+        "es-VE": [
+            "es-VE-PaolaNeural",
+            "es-VE-SebastianNeural"
+        ]
+        
+    },
+    "malay": {
+        "ms-MY": [
+            "ms-MY-OsmanNeural",
+            "ms-MY-YasminNeural"
+        ],
+        "ta-MY": [
+            "ta-MY-KaniNeural",
+            "ta-MY-SuryaNeural"
+        ]
+    },
+    "filipino": {
+        "fil-PH": [
+            "fil-PH-AngeloNeural",
+            "fil-PH-BlessicaNeural"
+        ]
+    },
+    "hi": {
+        "hi-IN": [
+          "hi-IN-MadhurNeural",
+          "hi-IN-SwaraNeural"
+    
+        ]
+    },
+    "ar": {
+        "ar-AR": [
+        "ar-AE-FatimaNeural",
+        "ar-AE-HamdanNeural"
+        ],
+        "ar-BH": [
+        "ar-BH-AliNeural",
+        "ar-BH-LailaNeural"
+        ],
+        "ar-DZ": [
+        "ar-DZ-AminaNeural",
+        "ar-DZ-IsmaelNeural"
+        ],
+        "ar-EG": [
+        "ar-EG-SalmaNeural",
+        "ar-EG-ShakirNeural"
+        ],
+        "ar-IQ": [
+        "ar-IQ-BasselNeural",
+        "ar-IQ-RanaNeural"
+        ],
+        "ar-JO": [
+        "ar-JO-SanaNeural",
+        "ar-JO-TaimNeural4"
+        ],
+        "ar-KW": [
+        "ar-KW-FahedNeural",
+        "ar-KW-NouraNeural"
+        ],
+        "ar-LB": [
+        "ar-LB-LaylaNeural",
+        "ar-LB-RamiNeural"
+        ],
+        "ar-LY": [
+        "ar-LY-ImanNeural",
+        "ar-LY-OmarNeural"
+        ],
+        "ar-MA": [
+        "ar-MA-JamalNeural",
+        "ar-MA-MounaNeural"
+        ],
+        "ar-OM": [
+        "ar-OM-AbdullahNeural",
+        "ar-OM-AyshaNeural"
+        ],
+        "ar-QA": [
+        "ar-QA-AmalNeural",
+        "ar-QA-MoazNeural"
+        ],
+        "ar-SA": [
+        "ar-SA-HamedNeural",
+        "ar-SA-ZariyahNeural"
+        ],
+        "ar-SY": [
+        "ar-SY-AmanyNeural",
+        "ar-SY-LaithNeural"
+        ],
+        "ar-TN": [
+        "ar-TN-HediNeural",
+        "ar-TN-ReemNeural"
+        ],
+        "ar-YE": [
+        "ar-YE-MaryamNeural",
+        "ar-YE-SalehNeural"
+        ]
+    }
+}
