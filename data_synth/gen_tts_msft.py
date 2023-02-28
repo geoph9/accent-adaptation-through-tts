@@ -110,7 +110,7 @@ if __name__ == "__main__":
     parser.add_argument("--lang", type=str, required=True,\
             help="Language code in Azure format")
     parser.add_argument("--speech-key", type=str,\
-            default="780dfc2fdaea4bf89a0de176b65467e1",\
+            default="XXXXXXXXXXXXXX",\
             help="Key for Azure use")
     parser.add_argument("--speech-region", type=str, default="eastus",
             help="Speech region for Azure use")
