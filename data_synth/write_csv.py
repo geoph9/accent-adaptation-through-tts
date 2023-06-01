@@ -4,7 +4,7 @@ import pickle as pkl
 import re
 
 def pkl2csv(no2voice, no2prompt, out_csv):
-    with open(out_csv, 'w') as f:
+    with open(out_csv, 'w', encoding='utf-8') as f:
         for no in no2voice:
             txt = ' '.join(no2prompt[no].split(",")).replace('...', ' ')
             txt = re.sub("\s+", " ", txt).strip()

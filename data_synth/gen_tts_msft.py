@@ -5,9 +5,17 @@ import random
 import time
 import pickle as pkl
 
-from run_tts import *
+try:
+    from tqdm import tqdm
+except ImportError:
+    print("WARNING: tqdm not installed. You can install it with pip install tqdm")
+    tqdm = lambda x: x
+
+from run_tts import (
+    create_wav,
+    check_zero_byte_audio_files
+)
 from write_csv import pkl2csv
-import pickle as pkl
 
 MAX_ITERS = 10
 
@@ -35,7 +43,7 @@ def gen_tts(args):
     assert args.out_csv.endswith('.csv'), "Must use .csv extension for"\
             " out-csv"
     mapping_pkl = args.out_csv[:-4] + "_no2voice.pkl"
-    assert os.path.isdir(os.path.dirname(args.out_csv)), out_csv
+    assert os.path.isdir(os.path.dirname(args.out_csv)), args.out_csv
     # Set seed ---------------------------------------------------------
     random.seed(args.seed)
     # Retrieve voices list ---------------------------------------------
@@ -51,7 +59,7 @@ def gen_tts(args):
     for dialect_key in voice_dict: # FIXME add hyperparam weight dialect
         voices += voice_dict[dialect_key]
     # Read prompts -----------------------------------------------------
-    with open(args.prompts_file, 'r') as f:
+    with open(args.prompts_file, 'r', encoding='utf-8') as f:
         prompts = f.readlines()
     prompts = [p.strip() for p in prompts]
     # Cycle through prompts --------------------------------------------
@@ -62,29 +70,40 @@ def gen_tts(args):
     else:
         no2voice = {}
         no2prompt = {}
+    SPEAKERS_TO_SAMPLE = args.speakers_per_prompt if \
+        args.speakers_per_prompt < len(voices) else len(voices)
     _, indices = check_zero_byte_audio_files(dir_path=args.wav_dir,\
-            fn_template=args.lang + "-{}.wav", expect_num=len(prompts))
+            fn_template=args.lang + "_{}.wav", \
+                expect_num=len(prompts)*SPEAKERS_TO_SAMPLE)
     for I in range(MAX_ITERS):
         print(f"~-~-~-~ {I} -~-~-~-", flush=True)
         print(f"Zero-byte files left: {len(indices)}")
-        for i in indices:
+        for i in tqdm(indices):
             prompt = prompts[i]
-            no = str(i).zfill(5)
-            wav_file = os.path.join(args.wav_dir, f"{args.lang}_{no}.wav")
-            voice_name = random.choice(voices)
-            create_wav(text=prompt, speech_key=args.speech_key,\
-                    speech_region=args.speech_region, voice_name=voice_name,\
-                    wav_file=wav_file, verbose=False)
-            sleep_time = round(.4  + I)
-            time.sleep(sleep_time)
-            no2voice[no] = voice_name
-            no2prompt[no] = prompt
-            with open(mapping_pkl, 'wb') as f:
-                pkl.dump((no2voice, no2prompt), f)
-            print(i, end=' ', flush=True)
+            # voice_names = random.sample(voices, SPEAKERS_TO_SAMPLE)
+            random.shuffle(voices)
+            voice_names = voices[:SPEAKERS_TO_SAMPLE]
+            for v_id, voice_name in enumerate(voice_names):
+                no = f"{str(i).zfill(5)}_spk{v_id}"
+                # voice_name = random.choice(voices)
+                wav_file = os.path.join(args.wav_dir, f"{args.lang}_{no}.wav")
+                if os.path.isfile(wav_file) and os.path.getsize(wav_file) == 0:
+                    os.unlink(wav_file)  # Remove 0-byte files
+                if not os.path.isfile(wav_file):
+                    create_wav(text=prompt, speech_key=args.speech_key,\
+                            speech_region=args.speech_region, voice_name=voice_name,\
+                            wav_file=wav_file, verbose=False)
+                    sleep_time = round(.3  + I)
+                    time.sleep(sleep_time)
+                no2voice[no] = voice_name
+                no2prompt[no] = prompt
+            if i % 20 == 0:  # Save every 20 prompts
+                with open(mapping_pkl, 'wb') as f:
+                    pkl.dump((no2voice, no2prompt), f)
         print()
         _, indices = check_zero_byte_audio_files(dir_path=args.wav_dir,\
-                fn_template=args.lang + "_{}.wav", expect_num=len(prompts))
+                fn_template=args.lang + "_{}.wav", \
+                    expect_num=len(prompts)*SPEAKERS_TO_SAMPLE)
         if not indices:
             print("No more 0-byte files!", flush=True)
             break
@@ -116,11 +135,19 @@ if __name__ == "__main__":
             help="Speech region for Azure use")
     parser.add_argument("--out-csv", type=str, required=True,\
             help="CSV file to write file-to-voice mappings to")
+    parser.add_argument("--speakers-per-prompt", type=int, default=1,\
+            help="Number of speakers per prompt (default: 1)")
 
     args = parser.parse_args()
 
     gen_tts(args)
 
     """
-    python3 gen_tts_msft.py --config-dict azure-voices.json --prompts-file tts-prompts/arctic/arctic-kor-lines.txt --wav-dir tts-audio/kor/ --lang kor --out-csv voice_csvs/kor-msft.csv --speech-key XXXXXXXXXXXXXX --speech-reagion eastus
+    # Example:
+    python3 gen_tts_msft.py --config-dict azure-voices.json \
+        --prompts-file tts-prompts/arctic/arctic-kor-lines.txt \
+        --wav-dir tts-audio/kor/ \
+        --lang kor --out-csv voice_csvs/kor-msft.csv \
+        --speech-key XXXXXXXXXXXXXX \
+        --speech-reagion eastus
     """

@@ -5,7 +5,8 @@ import re
 import sys
 from dataclasses import dataclass, field
 from typing import Any, Dict, List, Optional, Set, Union
-import os, glob
+import os
+import glob
 import datasets
 import numpy as np
 import torch

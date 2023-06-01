@@ -7,6 +7,12 @@
 #SBATCH --cpus-per-task=8
 #SBATCH --output=/data/accent_adaptation/models/fine_tune_wav2vec2_base_ft_960h_German_synth_largesynth_20ep.out
 
+# NOTE: This script is an example of how to run the fine-tuning script on the
+#       cluster. It is not meant to be run as-is, but rather to be used as a
+#       reference for how to set up a batch job. The names are definitely not
+#       the best and you should change them to depict the current accent, data,
+#       and current methodology you are using.
+
 module purge
 module load sox/14.4.2
 module load anaconda/2021-04-tf2
