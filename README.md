@@ -1,7 +1,16 @@
-# Accent Adaptation Using Synthesized Data
+# Multilingual TTS Accent Impressions for Accented ASR
 
 This is the public repository containing the scripts used to process and generate synthesized
 data, and use them to fine-tune huggingface's the `wav2vec2.0-base` model. The corresponding paper will be published soon.
+
+Repository structure:
+- `data_prep`: Contains the python scripts used to prepare the common voice and l2-arctic datasets.
+- `data_synth`: Contains code for synthesizing accented speech using Microsoft's TTS service (note that you need an API key).
+- `train`: Contains code to finetune a `wav2vec 2.0` model using hugginface's transformers.
+
+Please install all dependencies (`pip install -r requirements.txt`) before trying to use any of our scripts.
+
+*Keywords: accented speech recognition, data augmentation, low-resource speech technologies, speech synthesis*
 
 ## Abstract
 
@@ -24,3 +33,15 @@ current repo will likely not follow any changes from the original repo, so if yo
 up-to-date version of this work you should separately clone `n8rob`'s repository.
 
 Note that in our paper there are multiple types of synthesized data. This is because we wanted to test the effectiveness of synthesized accented speech when assuming different levels of prior knowledge. For instance, in the most basic case, we use MS-TTS to synthesize audio from the training transcripts (after making sure that there is no overlap between the texts of the training sets and that of the test sets). This is an augmentation technique that is commonly used in ASR. Besides that, we also experiment with different sources of text, such as that from the Gutenberg corpus.
+
+## Citation
+
+```
+@inproceedings{accent_adaptation_tts,
+  author = {Karakasidis, Georgios and Robinson, Nathaniel and Getman, Yaroslav and Ogayo, Atieno and Al-Ghezi, Ragheb and Ayasi, Ananya and Watanabe, Shinji and Mortense, David and Kurimo, Mikko},
+  title = {Multilingual TTS Accent Impressions for Accented ASR},
+  booktitle = {Text, Speech, and Dialogue},
+  publisher="Springer International Publishing",
+  year = {2023}
+}
+```
