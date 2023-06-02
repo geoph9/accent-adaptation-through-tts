@@ -242,5 +242,64 @@
         "ar-YE-MaryamNeural",
         "ar-YE-SalehNeural"
         ]
+    },
+    "zho": {
+        "zh-CN": [
+            "zh-CN-XiaochenNeural",
+            "zh-CN-XiaohanNeural",
+            "zh-CN-XiaomengNeural",
+            "zh-CN-XiaomoNeural",
+            "zh-CN-XiaoqiuNeural",
+            "zh-CN-XiaoruiNeural",
+            "zh-CN-XiaoshuangNeural",
+            "zh-CN-XiaoxiaoNeural",
+            "zh-CN-XiaoxuanNeural",
+            "zh-CN-XiaoyanNeural",
+            "zh-CN-XiaoyiNeural",
+            "zh-CN-XiaoyouNeural",
+            "zh-CN-XiaozhenNeural",
+            "zh-CN-YunfengNeural",
+            "zh-CN-YunhaoNeural",
+            "zh-CN-YunjianNeural",
+            "zh-CN-YunxiaNeural",
+            "zh-CN-YunxiNeural",
+            "zh-CN-YunyangNeural",
+            "zh-CN-YunyeNeural",
+            "zh-CN-YunzeNeural"
+
+        ],
+        "wuu-CN": [
+            "wuu-CN-XiaotongNeural",
+            "wuu-CN-YunzheNeural"
+        ],
+        "yue-CN": [
+            "yue-CN-XiaoMinNeural",
+            "yue-CN-YunSongNeural"
+        ],
+        "zh-CN-henan": [
+            "zh-CN-henan-YundengNeural"
+        ],
+        "zh-CN-liaoning": [
+            "zh-CN-liaoning-XiaobeiNeural"
+        ],
+        "zh-CN-shaanxi": [
+            "zh-CN-shaanxi-XiaoniNeural"
+        ],
+        "zh-CN-shandong": [
+            "zh-CN-shandong-YunxiangNeural"
+        ],
+        "zh-CN-sichuan": [
+            "zh-CN-sichuan-YunxiNeural"
+        ],
+        "zh-HK": [
+            "zh-HK-HiuGaaiNeural",
+            "zh-HK-HiuMaanNeural",
+            "zh-HK-WanLungNeural"
+        ],
+        "zh-TW": [
+            "zh-TW-HsiaoChenNeural",
+            "zh-TW-HsiaoYuNeural",
+            "zh-TW-YunJheNeural"
+        ]
     }
 }

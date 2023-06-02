@@ -5,7 +5,7 @@ data, and use them to fine-tune huggingface's the `wav2vec2.0-base` model. The c
 
 Repository structure:
 - `data_prep`: Contains the python scripts used to prepare the common voice and l2-arctic datasets.
-- `data_synth`: Contains code for synthesizing accented speech using Microsoft's TTS service (note that you need an API key).
+- `data_synth`: Contains code for synthesizing accented speech using Microsoft's TTS service (note that you need an API key). It also contains the gutenberg prompts that were used to produce the accented data.
 - `train`: Contains code to finetune a `wav2vec 2.0` model using hugginface's transformers.
 
 Please install all dependencies (`pip install -r requirements.txt`) before trying to use any of our scripts.
@@ -33,6 +33,10 @@ current repo will likely not follow any changes from the original repo, so if yo
 up-to-date version of this work you should separately clone `n8rob`'s repository.
 
 Note that in our paper there are multiple types of synthesized data. This is because we wanted to test the effectiveness of synthesized accented speech when assuming different levels of prior knowledge. For instance, in the most basic case, we use MS-TTS to synthesize audio from the training transcripts (after making sure that there is no overlap between the texts of the training sets and that of the test sets). This is an augmentation technique that is commonly used in ASR. Besides that, we also experiment with different sources of text, such as that from the Gutenberg corpus.
+
+Regarding the metadata of our synthesized audio, we used a set of different speakers for each prompt. In particular, we sampled `n` speakers out of the list of available speakers in `data_synth/azure-voices.json`. We noticed the quality of certain voices was much higher than that of others which could many times be unintelligible. In addition, certain voices had almost perfect American English accents when they were given English text prompts.
+
+Regarding the out-of-domain synthesized speech, we used a subset of the Gutenberg corpus to make the synthesis. In particular, we first sampled 33000 prompts and then preprocessed them. During this process we also removed 4896 prompts due to them containing non-ascii characters. The rest of the preprocessing included the removal of prompts with numerals, the removal of parentheses, colons, semicolons, apostrophes and the removal of excess spaces. The final number of Gutenberg prompts used to syntehsize speech was 28104.
 
 ## Citation
 
